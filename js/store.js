@@ -83,8 +83,8 @@
           <div class="collection-header">
             ${c.season ? `<div class="season">${escapeHtml(c.season)}</div>` : ''}
             <h3>${escapeHtml(c.name)}</h3>
-            ${c.description ? `<p>${escapeHtml(c.description)}</p>` : ''}
           </div>
+          ${c.description ? `<p class="collection-desc">${escapeHtml(c.description)}</p>` : ''}
           <div class="product-grid">
             ${items.map(productCardHtml).join('')}
           </div>

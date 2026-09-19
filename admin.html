@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>ניהול | N Luxury Design</title>
+  <title>Admin | N Luxury Design</title>
   <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -12,9 +12,9 @@
 <div id="loginView" class="login-screen">
   <div class="login-card">
     <h1>N Luxury Design</h1>
-    <p>כניסה לפאנל הניהול</p>
-    <input type="password" id="loginPassword" placeholder="סיסמה" autocomplete="current-password">
-    <button id="loginBtn" class="btn-primary">כניסה</button>
+    <p>Sign in to the admin panel</p>
+    <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password">
+    <button id="loginBtn" class="btn-primary">Sign in</button>
     <div id="loginError" class="error-text"></div>
   </div>
 </div>
@@ -22,10 +22,10 @@
 <div id="appView" class="admin-app" hidden>
   <header class="admin-header">
     <div class="admin-header-inner">
-      <span class="admin-brand">N Luxury Design · ניהול</span>
+      <span class="admin-brand">N Luxury Design · Admin</span>
       <div class="admin-header-actions">
-        <a href="index.html" target="_blank" class="link-btn">צפייה בחנות ↗</a>
-        <button id="logoutBtn" class="link-btn">יציאה</button>
+        <a href="index.html" target="_blank" class="link-btn">View shop ↗</a>
+        <button id="logoutBtn" class="link-btn">Sign out</button>
       </div>
     </div>
   </header>
@@ -33,15 +33,15 @@
   <main class="admin-main">
     <section class="panel">
       <div class="panel-head">
-        <h2>קולקציות</h2>
+        <h2>Collections</h2>
       </div>
 
       <form id="collectionForm" class="quick-form">
-        <h3>קולקציה חדשה</h3>
-        <input type="text" id="cName" placeholder="שם הקולקציה (למשל: אביב-קיץ 2026)" required>
-        <input type="text" id="cSeason" placeholder="עונה (לא חובה, למשל: SS26)">
-        <textarea id="cDescription" placeholder="תיאור קצר (לא חובה)" rows="2"></textarea>
-        <button type="submit" class="btn-primary">הוספת קולקציה</button>
+        <h3>New collection</h3>
+        <input type="text" id="cName" placeholder="Collection name (e.g. Spring-Summer 2026)" required>
+        <input type="text" id="cSeason" placeholder="Season (optional, e.g. SS26)">
+        <textarea id="cDescription" placeholder="Short description (optional)" rows="2"></textarea>
+        <button type="submit" class="btn-primary">Add collection</button>
         <div id="collectionFormStatus" class="status-text"></div>
       </form>
 
@@ -50,16 +50,16 @@
 
     <section class="panel" id="productsPanel" hidden>
       <div class="panel-head">
-        <h2 id="productsTitle">מוצרים</h2>
-        <button id="backToCollectionsBtn" class="link-btn">← חזרה לקולקציות</button>
+        <h2 id="productsTitle">Products</h2>
+        <button id="backToCollectionsBtn" class="link-btn">← Back to collections</button>
       </div>
 
       <form id="productForm" class="quick-form">
-        <h3>הוספת מוצר מהירה</h3>
-        <input type="text" id="pName" placeholder="שם המוצר" required>
-        <textarea id="pDescription" placeholder="תיאור (לא חובה)" rows="2"></textarea>
+        <h3>Quick add product</h3>
+        <input type="text" id="pName" placeholder="Product name" required>
+        <textarea id="pDescription" placeholder="Description (optional)" rows="2"></textarea>
         <div class="form-row">
-          <input type="number" id="pPrice" placeholder="מחיר (למשל 129.90)" step="0.01" min="0" required>
+          <input type="number" id="pPrice" placeholder="Price (e.g. 129.90)" step="0.01" min="0" required>
           <select id="pCurrency">
             <option value="eur">EUR €</option>
             <option value="usd">USD $</option>
@@ -69,7 +69,7 @@
         </div>
         <input type="file" id="pImages" accept="image/*" multiple capture="environment">
         <div id="pImagePreview" class="image-preview"></div>
-        <button type="submit" class="btn-primary" id="pSubmitBtn">הוספת מוצר</button>
+        <button type="submit" class="btn-primary" id="pSubmitBtn">Add product</button>
         <div id="productFormStatus" class="status-text"></div>
       </form>
 

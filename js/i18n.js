@@ -168,8 +168,8 @@
   };
 
   const LANGS = [
-    { code: 'en', label: 'English' },
     { code: 'ru', label: 'Русский' },
+    { code: 'en', label: 'English' },
     { code: 'fr', label: 'Français' },
     { code: 'es', label: 'Español' },
     { code: 'it', label: 'Italiano' }
@@ -180,14 +180,14 @@
       const saved = localStorage.getItem('nlux_lang');
       if (saved && STRINGS[saved]) return saved;
     } catch {}
-    const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
-    return STRINGS[nav] ? nav : 'en';
+    const nav = (navigator.language || 'ru').slice(0, 2).toLowerCase();
+    return STRINGS[nav] ? nav : 'ru';
   }
 
   let current = detectLang();
 
   function t(key) {
-    return (STRINGS[current] && STRINGS[current][key]) || STRINGS.en[key] || key;
+    return (STRINGS[current] && STRINGS[current][key]) || STRINGS.ru[key] || key;
   }
 
   function setLang(code) {

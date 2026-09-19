@@ -55,7 +55,7 @@
       showApp();
       loadCollections();
     } catch (e) {
-      errEl.textContent = 'סיסמה שגויה';
+      errEl.textContent = 'Incorrect password';
     }
   }
 
@@ -73,18 +73,18 @@
     const season = document.getElementById('cSeason').value.trim();
     const description = document.getElementById('cDescription').value.trim();
     if (!name) return;
-    status.textContent = 'שומר...';
+    status.textContent = 'Saving...';
     try {
       await api('/api/admin/collections', {
         method: 'POST',
         body: JSON.stringify({ name, season: season || null, description: description || null })
       });
       document.getElementById('collectionForm').reset();
-      status.textContent = 'נוספה בהצלחה';
+      status.textContent = 'Added successfully';
       loadCollections();
       setTimeout(() => (status.textContent = ''), 2000);
     } catch (err) {
-      status.textContent = 'שגיאה: ' + err.message;
+      status.textContent = 'Error: ' + err.message;
     }
   });
 
@@ -97,12 +97,12 @@
   function renderCollectionsTable() {
     const el = document.getElementById('collectionsTable');
     if (!collections.length) {
-      el.innerHTML = '<div class="empty-hint">אין עדיין קולקציות. הוסיפי אחת למעלה.</div>';
+      el.innerHTML = '<div class="empty-hint">No collections yet. Add one above.</div>';
       return;
     }
     el.innerHTML = `
       <table class="data-table">
-        <thead><tr><th>שם</th><th>עונה</th><th>סטטוס</th><th></th></tr></thead>
+        <thead><tr><th>Name</th><th>Season</th><th>Status</th><th></th></tr></thead>
         <tbody>
           ${collections
             .map(
@@ -110,13 +110,13 @@
             <tr>
               <td>${escapeHtml(c.name)}</td>
               <td>${escapeHtml(c.season || '—')}</td>
-              <td><span class="badge ${c.is_active ? 'active' : 'inactive'}">${c.is_active ? 'פעילה' : 'מוסתרת'}</span></td>
+              <td><span class="badge ${c.is_active ? 'active' : 'inactive'}">${c.is_active ? 'Active' : 'Hidden'}</span></td>
               <td>
                 <div class="row-actions">
-                  <button data-products="${c.id}">מוצרים</button>
-                  <button data-edit-col="${c.id}">עריכה</button>
-                  <button data-toggle-col="${c.id}">${c.is_active ? 'הסתרה' : 'הפעלה'}</button>
-                  <button class="danger" data-delete-col="${c.id}">מחיקה</button>
+                  <button data-products="${c.id}">Products</button>
+                  <button data-edit-col="${c.id}">Edit</button>
+                  <button data-toggle-col="${c.id}">${c.is_active ? 'Hide' : 'Show'}</button>
+                  <button class="danger" data-delete-col="${c.id}">Delete</button>
                 </div>
               </td>
             </tr>`
@@ -134,11 +134,11 @@
   async function editCollection(id) {
     const c = collections.find((x) => x.id === id);
     if (!c) return;
-    const name = prompt('שם הקולקציה:', c.name);
+    const name = prompt('Collection name:', c.name);
     if (name === null) return;
-    const season = prompt('עונה:', c.season || '');
+    const season = prompt('Season:', c.season || '');
     if (season === null) return;
-    const description = prompt('תיאור:', c.description || '');
+    const description = prompt('Description:', c.description || '');
     if (description === null) return;
     await api(`/api/admin/collections?id=${id}`, {
       method: 'PUT',
@@ -155,7 +155,7 @@
   }
 
   async function deleteCollection(id) {
-    if (!confirm('למחוק את הקולקציה וכל המוצרים בתוכה? פעולה זו בלתי הפיכה.')) return;
+    if (!confirm('Delete this collection and all its products? This cannot be undone.')) return;
     await api(`/api/admin/collections?id=${id}`, { method: 'DELETE' });
     loadCollections();
   }
@@ -170,7 +170,7 @@
   async function openProducts(collectionId) {
     currentCollectionId = collectionId;
     const c = collections.find((x) => x.id === collectionId);
-    document.getElementById('productsTitle').textContent = `מוצרים · ${c ? c.name : ''}`;
+    document.getElementById('productsTitle').textContent = `Products · ${c ? c.name : ''}`;
     productsPanel.hidden = false;
     productsPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     resetProductForm();
@@ -235,7 +235,7 @@
 
     btn.disabled = true;
     try {
-      status.textContent = pendingImages.length ? `מעלה ${pendingImages.length} תמונות...` : 'שומר...';
+      status.textContent = pendingImages.length ? `Uploading ${pendingImages.length} photo(s)...` : 'Saving...';
       const imageUrls = [];
       for (const img of pendingImages) {
         const base64 = img.dataUrl.split(',')[1];
@@ -246,7 +246,7 @@
         imageUrls.push(url);
       }
 
-      status.textContent = 'שומר מוצר...';
+      status.textContent = 'Saving product...';
       await api('/api/admin/products', {
         method: 'POST',
         body: JSON.stringify({
@@ -259,12 +259,12 @@
         })
       });
 
-      status.textContent = 'נוסף בהצלחה ✓';
+      status.textContent = 'Added successfully ✓';
       resetProductForm();
       loadProducts();
       setTimeout(() => (status.textContent = ''), 2000);
     } catch (err) {
-      status.textContent = 'שגיאה: ' + err.message;
+      status.textContent = 'Error: ' + err.message;
     } finally {
       btn.disabled = false;
     }
@@ -278,12 +278,12 @@
   function renderProductsTable(products) {
     const el = document.getElementById('productsTable');
     if (!products.length) {
-      el.innerHTML = '<div class="empty-hint">אין עדיין מוצרים בקולקציה הזו.</div>';
+      el.innerHTML = '<div class="empty-hint">No products in this collection yet.</div>';
       return;
     }
     el.innerHTML = `
       <table class="data-table">
-        <thead><tr><th></th><th>שם</th><th>מחיר</th><th>סטטוס</th><th></th></tr></thead>
+        <thead><tr><th></th><th>Name</th><th>Price</th><th>Status</th><th></th></tr></thead>
         <tbody>
           ${products
             .map((p) => {
@@ -293,12 +293,12 @@
                 <td>${img ? `<img class="thumb" src="${img.url}">` : ''}</td>
                 <td>${escapeHtml(p.name)}</td>
                 <td>${(p.price_cents / 100).toFixed(2)} ${p.currency.toUpperCase()}</td>
-                <td><span class="badge ${p.is_active ? 'active' : 'inactive'}">${p.is_active ? 'פעיל' : 'מוסתר'}</span></td>
+                <td><span class="badge ${p.is_active ? 'active' : 'inactive'}">${p.is_active ? 'Active' : 'Hidden'}</span></td>
                 <td>
                   <div class="row-actions">
-                    <button data-edit-prod="${p.id}">עריכה</button>
-                    <button data-toggle-prod="${p.id}">${p.is_active ? 'הסתרה' : 'הפעלה'}</button>
-                    <button class="danger" data-delete-prod="${p.id}">מחיקה</button>
+                    <button data-edit-prod="${p.id}">Edit</button>
+                    <button data-toggle-prod="${p.id}">${p.is_active ? 'Hide' : 'Show'}</button>
+                    <button class="danger" data-delete-prod="${p.id}">Delete</button>
                   </div>
                 </td>
               </tr>`;
@@ -315,9 +315,9 @@
   async function editProduct(id, products) {
     const p = products.find((x) => x.id === id);
     if (!p) return;
-    const name = prompt('שם המוצר:', p.name);
+    const name = prompt('Product name:', p.name);
     if (name === null) return;
-    const priceStr = prompt('מחיר:', (p.price_cents / 100).toFixed(2));
+    const priceStr = prompt('Price:', (p.price_cents / 100).toFixed(2));
     if (priceStr === null) return;
     const price = parseFloat(priceStr);
     if (!Number.isFinite(price)) return;
@@ -336,7 +336,7 @@
   }
 
   async function deleteProduct(id) {
-    if (!confirm('למחוק את המוצר?')) return;
+    if (!confirm('Delete this product?')) return;
     await api(`/api/admin/products?id=${id}`, { method: 'DELETE' });
     loadProducts();
   }

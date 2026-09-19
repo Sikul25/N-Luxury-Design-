@@ -5,13 +5,37 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="N Luxury Design — handcrafted jewelry and fashion collections.">
   <title>N Luxury Design</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="seal" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="57" fill="none" stroke="url(#sealGrad)" stroke-width="1.2"/>
+    <circle cx="60" cy="60" r="49" fill="none" stroke="url(#sealGrad)" stroke-width="1"/>
+    <text x="60" y="76" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-weight="600" font-size="54" fill="url(#sealGrad)">N</text>
+    <path d="M60 15 L63 22 L60 19 L57 22 Z" fill="url(#sealGrad)"/>
+    <path d="M60 105 L63 98 L60 101 L57 98 Z" fill="url(#sealGrad)"/>
+    <defs>
+      <linearGradient id="sealGrad" x1="0" y1="0" x2="120" y2="120">
+        <stop offset="0" stop-color="#e3c990"/>
+        <stop offset=".5" stop-color="#b7935a"/>
+        <stop offset="1" stop-color="#8a6a3d"/>
+      </linearGradient>
+    </defs>
+  </symbol>
+</svg>
+
 <header class="site-header">
   <div class="header-inner">
-    <a href="#" class="brand">N Luxury Design</a>
+    <a href="#" class="brand">
+      <svg class="brand-seal"><use href="#seal"/></svg>
+      <span class="brand-word"><b>N</b> Luxury Design</span>
+    </a>
     <div class="header-actions">
       <select class="lang-select" id="langSelect" aria-label="Language"></select>
       <button class="cart-btn" id="cartOpenBtn" data-i18n="nav.cart">Cart <span class="cart-count" id="cartCount">0</span></button>
@@ -21,6 +45,7 @@
 
 <main>
   <section class="hero">
+    <svg class="hero-seal"><use href="#seal"/></svg>
     <div class="hero-eyebrow" data-i18n="hero.eyebrow">N LUXURY DESIGN</div>
     <h1 data-i18n="hero.title">Handcrafted elegance,<br>season after season.</h1>
     <p data-i18n="hero.subtitle">Discover the latest collection — jewelry and fashion pieces designed and photographed by hand.</p>
@@ -35,7 +60,10 @@
 </main>
 
 <footer class="site-footer">
-  <span class="brand">N LUXURY DESIGN</span>
+  <span class="brand" style="justify-content:center">
+    <svg class="brand-seal"><use href="#seal"/></svg>
+    <span class="brand-word"><b>N</b> Luxury Design</span>
+  </span>
   <p data-i18n="footer.tagline">Timeless pieces, made with care.</p>
   <p>&copy; <span id="year"></span> N Luxury Design — <span data-i18n="footer.rights">All rights reserved.</span></p>
 </footer>
