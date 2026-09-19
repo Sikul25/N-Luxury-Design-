@@ -189,10 +189,12 @@ button { font-family: inherit; cursor: pointer; }
 .hero p {
   position: relative;
   z-index: 2;
-  max-width: 520px;
+  max-width: 480px;
   margin: 0 auto 30px;
   color: var(--stone);
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-wrap: balance;
 }
 
 .btn-primary {
