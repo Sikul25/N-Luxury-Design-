@@ -71,7 +71,7 @@
       'nav.collections': 'Collections',
       'nav.cart': 'Panier',
       'hero.eyebrow': 'BURLESQUE ATELIER',
-      'hero.title': 'Une élégance artisanale,\nsaison après saison.',
+      'hero.title': 'Une élégance façonnée à la main,\nsaison après saison.',
       'hero.subtitle': 'Découvrez la dernière collection — vêtements et bijoux faits main, avec soin.',
       'hero.cta': 'Découvrir la collection',
       'collections.title': 'Collections',
