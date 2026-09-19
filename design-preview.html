@@ -41,9 +41,9 @@
   /* ---------- Logo ---------- */
   .logo-mark{display:flex;align-items:center;gap:13px;color:var(--ink)}
   .logo-mark.on-dark{color:var(--paper)}
-  .logo-seal{width:40px;height:20px;flex:none}
-  .logo-word{font-family:'Poppins',sans-serif;font-size:16px;letter-spacing:.03em;font-weight:800;text-transform:uppercase}
-  .logo-word small{display:block;font-family:'Manrope',sans-serif;font-size:8.5px;letter-spacing:.28em;color:var(--stone);margin-top:5px;font-weight:600;text-transform:uppercase}
+  .logo-seal{width:21px;height:48px;flex:none}
+  .logo-word{display:flex;flex-direction:column;line-height:.92;font-family:'Poppins',sans-serif;font-size:15px;letter-spacing:.02em;font-weight:800;text-transform:uppercase}
+  .logo-word small{font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.22em;color:inherit;margin-top:4px;font-weight:500;text-transform:uppercase}
 
   /* ---------- Header ---------- */
   header.site{
@@ -93,7 +93,7 @@
     max-width:1180px;margin:0 auto;
     display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;
   }
-  .hero-seal{width:110px;height:55px;margin-bottom:26px}
+  .hero-seal{width:60px;height:137px;margin-bottom:26px}
   .hero h1{
     font-size:clamp(38px,6vw,70px);
     font-weight:500;
@@ -233,9 +233,8 @@
 
 <!-- ============ LOGO (SVG symbol, monochrome via currentColor) ============ -->
 <svg width="0" height="0" style="position:absolute">
-  <symbol id="seal" viewBox="0 0 240 120">
-    <path d="M15,25 Q60,3 105,25 L120,82 Z" fill="#e5342a"/>
-    <path d="M225,25 Q180,3 135,25 L120,82 Z" fill="#e5342a"/>
+  <symbol id="seal" viewBox="0 0 70 160">
+    <path d="M0,0 C55,0 65,40 25,80 C65,120 55,160 0,160 L0,0 Z" fill="#e0392f"/>
   </symbol>
 </svg>
 
@@ -243,7 +242,7 @@
   <div class="wrap site-inner">
     <div class="logo-mark">
       <svg class="logo-seal"><use href="#seal"/></svg>
-      <div class="logo-word">BURLESQUE<small id="taglineWord">ATELIER</small></div>
+      <div class="logo-word"><span>BUR</span><span>LES</span><span>QUE</span><small id="taglineWord">ATELIER</small></div>
     </div>
     <nav class="site-nav">
       <a href="#collections" data-t="nav.collections">Коллекции</a>
@@ -394,17 +393,17 @@
     <h2 class="serif" style="text-align:center;font-size:clamp(26px,3.4vw,36px);font-weight:500;margin:0 0 40px" data-t="id.title">Логотип Burlesque Atelier</h2>
     <div class="logo-panels">
       <div class="logo-panel">
-        <svg width="70" height="35"><use href="#seal"/></svg>
-        <div class="logo-word" style="font-size:18px">BURLESQUE<small>ATELIER</small></div>
+        <svg width="35" height="80"><use href="#seal"/></svg>
+        <div class="logo-word" style="font-size:16px;align-items:center"><span>BUR</span><span>LES</span><span>QUE</span><small>ATELIER</small></div>
         <div class="cap" data-t="id.light">На светлом фоне</div>
       </div>
       <div class="logo-panel dark">
-        <svg width="70" height="35"><use href="#seal"/></svg>
-        <div class="logo-word" style="font-size:18px">BURLESQUE<small>ATELIER</small></div>
+        <svg width="35" height="80"><use href="#seal"/></svg>
+        <div class="logo-word" style="font-size:16px;align-items:center"><span>BUR</span><span>LES</span><span>QUE</span><small>ATELIER</small></div>
         <div class="cap" data-t="id.dark">На тёмном фоне</div>
       </div>
       <div class="logo-panel">
-        <svg width="70" height="35"><use href="#seal"/></svg>
+        <svg width="35" height="80"><use href="#seal"/></svg>
         <div class="cap" data-t="id.wordmark">Знак для соцсетей и бирок</div>
       </div>
     </div>
@@ -415,7 +414,7 @@
   <div class="foot-inner">
     <div class="logo-mark on-dark">
       <svg class="logo-seal"><use href="#seal"/></svg>
-      <div class="logo-word">BURLESQUE<small>ATELIER</small></div>
+      <div class="logo-word"><span>BUR</span><span>LES</span><span>QUE</span><small>ATELIER</small></div>
     </div>
     <div class="foot-links">
       <a href="#collections" data-t="nav.collections">Коллекции</a>
