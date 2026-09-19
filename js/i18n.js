@@ -137,7 +137,7 @@
       'nav.collections': 'Collezioni',
       'nav.cart': 'Carrello',
       'hero.eyebrow': 'BURLESQUE ATELIER',
-      'hero.title': 'Eleganza artigianale,\nstagione dopo stagione.',
+      'hero.title': 'Eleganza fatta a mano,\nstagione dopo stagione.',
       'hero.subtitle': 'Scopri l\'ultima collezione: abiti e gioielli fatti a mano, con cura.',
       'hero.cta': 'Esplora la collezione',
       'collections.title': 'Collezioni',
