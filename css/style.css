@@ -92,7 +92,7 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 500;
   font-size: 10px;
   letter-spacing: 0.22em;
-  color: var(--ink);
+  color: inherit;
   margin-top: 4px;
   text-transform: uppercase;
 }
