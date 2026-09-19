@@ -69,23 +69,26 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--ink);
 }
 
-.brand-seal { width: 34px; height: 17px; flex: none; }
+.brand-seal { width: 21px; height: 48px; flex: none; }
 
 .brand-word {
+  display: flex;
+  flex-direction: column;
   font-family: var(--logo-font);
   font-weight: 800;
-  font-size: 16px;
-  letter-spacing: 0.03em;
+  font-size: 15px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  line-height: 1.15;
+  line-height: 0.92;
 }
 .brand-word small {
-  display: block;
   font-family: var(--sans);
-  font-weight: 600;
-  font-size: 9px;
-  letter-spacing: 0.3em;
-  color: var(--stone);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--ink);
+  margin-top: 4px;
+  text-transform: uppercase;
 }
 
 .header-actions {
@@ -152,7 +155,7 @@ button { font-family: inherit; cursor: pointer; }
   pointer-events: none;
 }
 
-.hero-seal { width: 96px; height: 48px; margin: 0 auto 24px; position: relative; z-index: 2; }
+.hero-seal { width: 48px; height: 110px; margin: 0 auto 24px; position: relative; z-index: 2; }
 
 .hero-eyebrow {
   position: relative;
@@ -432,11 +435,11 @@ button { font-family: inherit; cursor: pointer; }
   .header-inner { padding: 14px 16px; }
   .header-actions { flex-basis: 100%; justify-content: space-between; order: 3; }
   .brand-word { font-size: 13px; }
-  .brand-seal { width: 26px; height: 26px; }
+  .brand-seal { width: 18px; height: 41px; }
   .lang-select { font-size: 11px; padding: 6px 8px; }
   .cart-btn { font-size: 10px; padding: 8px 12px; gap: 6px; }
   .hero { padding: 64px 16px 46px; }
-  .hero-seal { width: 76px; height: 38px; }
+  .hero-seal { width: 38px; height: 87px; }
   .section { padding: 40px 0 50px; }
   .collection-header h3 { font-size: 21px; }
 }
