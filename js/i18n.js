@@ -6,7 +6,7 @@
       'nav.cart': 'Cart',
       'hero.eyebrow': 'BURLESQUE ATELIER',
       'hero.title': 'Handcrafted elegance,\nseason after season.',
-      'hero.subtitle': 'Discover the latest collection — handmade clothing and jewelry, made with care.',
+      'hero.subtitle': 'Discover our new collection — a curated selection of exceptional pieces, handcrafted with passion, precision and refinement.',
       'hero.cta': 'Explore the collection',
       'collections.title': 'Collections',
       'collections.empty': 'New collections are coming soon.',
