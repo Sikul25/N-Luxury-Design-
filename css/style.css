@@ -62,9 +62,12 @@ button { font-family: inherit; cursor: pointer; }
 .brand {
   display: flex;
   align-items: center;
+  gap: 11px;
   text-decoration: none;
   color: var(--ink);
 }
+
+.brand-seal { width: 32px; height: 32px; flex: none; }
 
 .brand-word {
   font-family: var(--logo-font);
@@ -137,6 +140,8 @@ button { font-family: inherit; cursor: pointer; }
   border: 1px solid var(--line-dark);
   pointer-events: none;
 }
+
+.hero-seal { width: 72px; height: 72px; margin: 0 auto 24px; color: var(--paper); position: relative; z-index: 2; }
 
 .hero-eyebrow {
   position: relative;
