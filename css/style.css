@@ -69,7 +69,7 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--ink);
 }
 
-.brand-seal { width: 32px; height: 32px; flex: none; }
+.brand-seal { width: 34px; height: 17px; flex: none; }
 
 .brand-word {
   font-family: var(--logo-font);
@@ -77,6 +77,15 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 16px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  line-height: 1.15;
+}
+.brand-word small {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: var(--stone);
 }
 
 .header-actions {
@@ -143,7 +152,7 @@ button { font-family: inherit; cursor: pointer; }
   pointer-events: none;
 }
 
-.hero-seal { width: 72px; height: 72px; margin: 0 auto 24px; color: var(--paper); position: relative; z-index: 2; }
+.hero-seal { width: 96px; height: 48px; margin: 0 auto 24px; position: relative; z-index: 2; }
 
 .hero-eyebrow {
   position: relative;
@@ -427,7 +436,7 @@ button { font-family: inherit; cursor: pointer; }
   .lang-select { font-size: 11px; padding: 6px 8px; }
   .cart-btn { font-size: 10px; padding: 8px 12px; gap: 6px; }
   .hero { padding: 64px 16px 46px; }
-  .hero-seal { width: 60px; height: 60px; }
+  .hero-seal { width: 76px; height: 38px; }
   .section { padding: 40px 0 50px; }
   .collection-header h3 { font-size: 21px; }
 }
